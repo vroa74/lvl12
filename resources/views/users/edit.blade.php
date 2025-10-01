@@ -134,8 +134,11 @@
                     </div>
 
                     <!-- Status -->
-                    <div class="md:col-span-2">
-                        <flux:checkbox label="Usuario activo" name="status" value="1" {{ old('status', $user->status) ? 'checked' : '' }} />
+                    <div>
+                        <flux:select label="Estado del Usuario" name="status" required>
+                            <option value="1" {{ old('status', $user->status) == '1' ? 'selected' : '' }}>Activo</option>
+                            <option value="0" {{ old('status', $user->status) == '0' ? 'selected' : '' }}>Inactivo</option>
+                        </flux:select>
                         @error('status')
                             <flux:text class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</flux:text>
                         @enderror
