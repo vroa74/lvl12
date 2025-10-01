@@ -12,7 +12,7 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('config', 'config')
+Volt::route('config', 'config')
     ->middleware(['auth', 'verified'])
     ->name('config');
 

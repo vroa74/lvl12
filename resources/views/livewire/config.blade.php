@@ -1,8 +1,9 @@
-@php
+<?php
+
 use Livewire\Volt\Component;
 
 new class extends Component {
-    public string $content = '';
+    public $content = '';
     
     public function save()
     {
@@ -12,11 +13,11 @@ new class extends Component {
         
         session()->flash('success', 'Contenido guardado exitosamente!');
     }
-}
-@endphp
+}; ?>
 
-<x-layouts.app :title="__('Configuración')">
-    <div class="flex h-full w-full flex-1 flex-col gap-6">
+<div>
+    <x-layouts.app :title="__('Configuración')">
+        <div class="flex h-full w-full flex-1 flex-col gap-6">
         <div class="mb-6">
             <flux:heading size="xl">{{ __('Editor Trix - Demo') }}</flux:heading>
             <flux:subheading>{{ __('Ejemplo de uso de Trix Editor con Livewire/Volt') }}</flux:subheading>
@@ -54,6 +55,7 @@ new class extends Component {
                 </div>
             </div>
         @endif
-    </div>
-</x-layouts.app>
+        </div>
+    </x-layouts.app>
+</div>
 
