@@ -39,21 +39,21 @@ new class extends Component {
 
             <!-- Sección: Botones -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Botones</flux:heading>
+                <flux:heading class="mb-4">Botones</flux:heading>
                 <div class="flex flex-wrap gap-3">
                     <flux:button variant="primary" icon="check">Primario</flux:button>
                     <flux:button variant="danger" icon="trash">Peligro</flux:button>
                     <flux:button variant="ghost" icon="pencil">Ghost</flux:button>
                     <flux:button variant="outline" icon="plus">Outline</flux:button>
                     <flux:button size="sm" icon="star">Pequeño</flux:button>
-                    <flux:button size="lg" icon="rocket">Grande</flux:button>
-                    <flux:button disabled icon="ban">Deshabilitado</flux:button>
+                    <flux:button icon="arrow-up">Grande</flux:button>
+                    <flux:button disabled icon="x-mark">Deshabilitado</flux:button>
                 </div>
             </div>
 
             <!-- Sección: Inputs -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Inputs</flux:heading>
+                <flux:heading class="mb-4">Inputs</flux:heading>
                 <div class="grid gap-4 md:grid-cols-2">
                     <flux:input 
                         wire:model="name"
@@ -85,7 +85,7 @@ new class extends Component {
 
             <!-- Sección: Select -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Select & Dropdown</flux:heading>
+                <flux:heading class="mb-4">Select & Dropdown</flux:heading>
                 <div class="grid gap-4 md:grid-cols-2">
                     <flux:select wire:model="role" label="Rol" placeholder="Selecciona un rol">
                         <option value="admin">Administrador</option>
@@ -105,7 +105,7 @@ new class extends Component {
 
             <!-- Sección: Textarea -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Textarea</flux:heading>
+                <flux:heading class="mb-4">Textarea</flux:heading>
                 <flux:textarea 
                     wire:model="description"
                     label="Descripción" 
@@ -116,7 +116,7 @@ new class extends Component {
 
             <!-- Sección: Editor Trix -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Editor de Texto Enriquecido (Trix)</flux:heading>
+                <flux:heading class="mb-4">Editor de Texto Enriquecido (Trix)</flux:heading>
                 <x-trix-editor 
                     label="Contenido del artículo"
                     model="content"
@@ -126,7 +126,7 @@ new class extends Component {
 
             <!-- Sección: Checkboxes & Radio -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Checkboxes & Radio Buttons</flux:heading>
+                <flux:heading class="mb-4">Checkboxes & Radio Buttons</flux:heading>
                 
                 <div class="mb-6">
                     <flux:text class="mb-3 font-medium">Checkboxes:</flux:text>
@@ -149,7 +149,7 @@ new class extends Component {
 
             <!-- Sección: Switch -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Switch Toggle</flux:heading>
+                <flux:heading class="mb-4">Switch Toggle</flux:heading>
                 <div class="space-y-3">
                     <flux:switch label="Habilitar notificaciones" />
                     <flux:switch label="Modo oscuro" />
@@ -159,7 +159,7 @@ new class extends Component {
 
             <!-- Sección: Badges -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Badges</flux:heading>
+                <flux:heading class="mb-4">Badges</flux:heading>
                 <div class="flex flex-wrap gap-3">
                     <flux:badge>Default</flux:badge>
                     <flux:badge color="green">Activo</flux:badge>
@@ -172,8 +172,8 @@ new class extends Component {
 
             <!-- Sección: Iconos -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Iconos</flux:heading>
-                <div class="flex flex-wrap gap-4">
+                <flux:heading class="mb-4">Iconos</flux:heading>
+                <div class="flex flex-wrap gap-4 text-zinc-700 dark:text-zinc-300">
                     <flux:icon icon="home" class="size-6" />
                     <flux:icon icon="user" class="size-6" />
                     <flux:icon icon="envelope" class="size-6" />
@@ -189,7 +189,7 @@ new class extends Component {
 
             <!-- Sección: Tooltips -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Tooltips</flux:heading>
+                <flux:heading class="mb-4">Tooltips</flux:heading>
                 <div class="flex gap-4">
                     <flux:tooltip content="Esto es un tooltip">
                         <flux:button>Hover aquí</flux:button>
@@ -205,7 +205,7 @@ new class extends Component {
 
             <!-- Sección: Separadores -->
             <div class="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900">
-                <flux:heading size="lg" class="mb-4">Separadores</flux:heading>
+                <flux:heading class="mb-4">Separadores</flux:heading>
                 <flux:text>Texto antes del separador</flux:text>
                 <flux:separator class="my-4" />
                 <flux:text>Texto después del separador</flux:text>
@@ -213,7 +213,7 @@ new class extends Component {
 
             <!-- Botón de prueba -->
             <div class="flex justify-center">
-                <flux:button wire:click="save" variant="primary" icon="check" size="lg">
+                <flux:button wire:click="save" variant="primary" icon="check">
                     Guardar Todo
                 </flux:button>
             </div>
