@@ -15,8 +15,11 @@
                 <flux:navbar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                 </flux:navbar.item>
+                <flux:navbar.item icon="users" :href="route('users.index')" :current="request()->routeIs('users.*')">
+                    {{ __('Usuarios') }}
+                </flux:navbar.item>
                 <flux:navbar.item icon="cog-6-tooth" :href="route('config')" :current="request()->routeIs('config')" wire:navigate>
-                    {{ __('Configuración') }}
+                    {{-- {{ __('Configuración') }} --}}
                 </flux:navbar.item>
             </flux:navbar>
 
@@ -43,7 +46,8 @@
                     <flux:tooltip x-bind:content="isDark ? '{{ __('Switch to light mode') }}' : '{{ __('Switch to dark mode') }}'" position="bottom">
                         <button 
                             @click="toggleTheme()"
-                            class="flex h-10 items-center justify-center px-3 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors cursor-pointer"
+                            class="flex h-10 items-center justify-center px-3 transition-colors cursor-pointer"
+                            x-bind:class="isDark ? 'text-yellow-500 hover:text-yellow-600' : 'text-blue-500 hover:text-blue-600'"
                         >
                             <flux:icon x-show="isDark" icon="sun" class="size-5" />
                             <flux:icon x-show="!isDark" icon="moon" class="size-5" />
@@ -131,6 +135,9 @@
                     <flux:navlist.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                     </flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('users.index')" :current="request()->routeIs('users.*')">
+                    {{ __('Usuarios') }}
+                    </flux:navlist.item>
                     <flux:navlist.item icon="cog-6-tooth" :href="route('config')" :current="request()->routeIs('config')" wire:navigate>
                     {{ __('Configuración') }}
                     </flux:navlist.item>
@@ -160,6 +167,7 @@
                     }" 
                     @click="toggleTheme()"
                     x-bind:icon="isDark ? 'sun' : 'moon'"
+                    x-bind:class="isDark ? 'text-yellow-500 hover:text-yellow-600' : 'text-blue-500 hover:text-blue-600'"
                 >
                     <span x-text="isDark ? '{{ __('Light mode') }}' : '{{ __('Dark mode') }}'"></span>
                 </flux:navlist.item>

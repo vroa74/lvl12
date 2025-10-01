@@ -26,7 +26,10 @@ class User extends Authenticatable
         'rfc',
         'curp',
         'sex',
+        'cargo',
+        'nivel',
         'theme',
+        'status',
     ];
 
     /**

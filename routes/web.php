@@ -35,6 +35,9 @@ Route::middleware(['auth'])->group(function () {
         ->name('two-factor.show');
     
     Route::post('theme/update', App\Livewire\Actions\UpdateTheme::class)->name('theme.update');
+    
+    // CRUD de Usuarios
+    Route::resource('users', App\Http\Controllers\UserController::class);
 });
 
 require __DIR__.'/auth.php';
